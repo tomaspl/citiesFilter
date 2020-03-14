@@ -1,0 +1,29 @@
+<form class="example-form">
+  <h4>Selected Cities:</h4>
+  <mat-card id="chips">
+  <mat-chip-list #chipList aria-label="Fruit selection">
+    <mat-chip *ngFor="let city of selectedCities" [selectable]="selectable"
+             [removable]="removable" (removed)="remove(city)">
+      <span class="top-chip">{{city?.name}}<br><span class="little">({{city?.subcountry}} - {{city?.country}})</span></span>
+      
+      <mat-icon matChipRemove>cancel</mat-icon>
+    </mat-chip>
+  </mat-chip-list>
+</mat-card>
+    <mat-form-field class="mt-3 example-full-width">
+      <span mat-button matSuffix mat-icon-button aria-label="Clear">
+        <mat-icon>filter_list</mat-icon>
+      </span>
+    <mat-label>Type to filter by cityname or country</mat-label>
+
+    <input (keyup)="filterCity($event)" matInput>
+
+  </mat-form-field>
+  <mat-card class="float-left w-100">
+    <mat-checkbox class="w-100 float-left" (click)="checkCity(filteredCity)" *ngFor="let filteredCity of filteredCities">
+      <span class="top">{{filteredCity?.name}}</span>
+      <span class="bottom">{{filteredCity?.subcountry}} - {{filteredCity?.country}}</span>
+    </mat-checkbox>
+   </mat-card>
+
+</form>

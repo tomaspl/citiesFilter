@@ -1,0 +1,26 @@
+.mat-form-field{display: block;}
+mat-card{height:220px; overflow-y:scroll}
+mat-card#chips{height:80px; overflow-y:scroll}
+.top{
+  width: 100%;
+  float: left;
+  margin: -8px 0 0 0;
+}
+.top-chip{
+  width:100%; float:left; line-height: 10px; margin:0
+}
+.bottom{
+  width: 100%;
+  float: left;
+  font-size: 10px;
+  line-height: 0;
+}
+.little{
+  font-size: 9px;
+}
+mat-checkbox{
+  margin-bottom: 10px;
+}
+::ng-deep .mat-standard-chip.mat-chip-with-trailing-icon{
+padding-right: 4px!important;
+padding-left: 6px!important;}

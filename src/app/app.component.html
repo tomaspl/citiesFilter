@@ -30,7 +30,14 @@
     </svg>
 
   </div>
-  <app-filter-select class="col-6 mt-5 mb-5" [cities]="cities" (updatedSelection)="updateSelection($event)"></app-filter-select>
+  <mat-spinner class="mt-4 mb-4" *ngIf="showSpinner"></mat-spinner>
+  <app-filter-select
+    *ngIf="!showSpinner"
+    class="col-6 mt-5 mb-5"
+    [cities]="cities"
+    [undoAction]="undoAction"
+    (updateSelection)="updateSelection($event)"
+  ></app-filter-select>
 
 
   <!-- Footer -->
@@ -52,13 +59,3 @@
   </svg>
 
 </div>
-
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-
-

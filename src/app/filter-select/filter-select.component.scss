@@ -3,17 +3,15 @@ mat-card{height:220px; overflow-y:scroll}
 mat-card#chips{height:80px; overflow-y:scroll}
 .top{
   width: 100%;
-  float: left;
-  margin: -8px 0 0 0;
+  float: left;  
+  margin: 0;
 }
 .top-chip{
   width:100%; float:left; line-height: 10px; margin:0
 }
 .bottom{
-  width: 100%;
   float: left;
   font-size: 10px;
-  line-height: 0;
 }
 .little{
   font-size: 9px;
@@ -24,5 +22,12 @@ padding-right: 4px!important;
 padding-left: 6px!important;}
 
 ::ng-deep  .mat-checkbox-layout{
-  margin:0!important;
+  line-height: 12px;
 }
+::ng-deep .mat-checkbox-layout .mat-checkbox-label{
+  line-height: 12px;
+}
+p{
+  margin:0; float:left;
+}
+i{float: left; padding:0 3px 0 1px}

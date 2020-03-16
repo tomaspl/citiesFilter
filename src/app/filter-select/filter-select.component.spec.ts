@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { FilterSelectComponent } from './filter-select.component';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 describe('FilterSelectComponent', () => {
   let component: FilterSelectComponent;
@@ -8,7 +9,8 @@ describe('FilterSelectComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FilterSelectComponent ]
+      declarations: [ FilterSelectComponent ],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA],
     })
     .compileComponents();
   }));
@@ -20,6 +22,7 @@ describe('FilterSelectComponent', () => {
   });
 
   it('should create', () => {
+    component.text =''
     expect(component).toBeTruthy();
   });
 });

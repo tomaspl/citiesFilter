@@ -53,7 +53,11 @@ export class FilterSelectComponent{
   }
 
   matchText(city: CityInfo, textSplitted: string[]){
-    return textSplitted.every((text, index) => city.country.indexOf(text) > -1 || (city.subcountry && city.subcountry.indexOf(text) > -1) || city.name.indexOf(text) > -1)
+    const countryLowCase = city.country.toLowerCase();
+    let subcountryLowCase = null;
+    if(city.subcountry) subcountryLowCase = city.subcountry.toLowerCase();
+    const nameLowCase = city.name.toLowerCase();
+    return textSplitted.every(text => countryLowCase.indexOf(text.toLowerCase()) > -1 || (subcountryLowCase && subcountryLowCase.indexOf(text.toLowerCase()) > -1) || nameLowCase.indexOf(text.toLowerCase()) > -1)
   }
 
   remove(city: CityInfo): void {

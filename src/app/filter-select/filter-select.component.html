@@ -18,10 +18,13 @@
   </mat-form-field>
   <mat-card class="float-left w-100">
     <ng-container *ngFor="let filteredCity of filteredCities">
-      <div class="w-100 float-left mb-2">
+      <div class="w-100 float-left">
         <mat-checkbox (click)="checkCity($event, filteredCity)" checked="{{filteredList[filteredCity?.geonameid]}}">
-          <span class="top">{{filteredCity?.name}}</span>
-          <span class="bottom">{{filteredCity?.subcountry}} - {{filteredCity?.country}}</span>
+          <span class="top" [appBoldTextMatch]="text" [name]="filteredCity?.name">{{filteredCity?.name}}</span>
+          <p>
+            <span class="bottom" [appBoldTextMatch]="text" [name]="filteredCity?.subcountry">{{filteredCity?.subcountry}}</span> <i> - </i>
+            <span class="bottom" [appBoldTextMatch]="text" [name]="filteredCity?.country">{{filteredCity?.country}}</span>
+          </p>
         </mat-checkbox>
       </div>
   </ng-container>

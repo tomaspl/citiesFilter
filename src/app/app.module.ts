@@ -9,12 +9,14 @@ import { FilterSelectComponent } from './filter-select/filter-select.component';
 import { MatInputModule, MatIconModule, MatChipsModule, MatCheckbox, MatCheckboxModule, MatCardModule, MatSnackBarModule, MAT_SNACK_BAR_DEFAULT_OPTIONS, MatProgressSpinnerModule } from '@angular/material'
 import { FormsModule } from '@angular/forms';
 import { SnackBarErrorComponent } from './shared/snack-bar-error/snack-bar-error.component';
+import { BoldTextMatchDirective } from './directives/bold-text-match.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     FilterSelectComponent,
-    SnackBarErrorComponent
+    SnackBarErrorComponent,
+    BoldTextMatchDirective
   ],
   imports: [
     BrowserModule,

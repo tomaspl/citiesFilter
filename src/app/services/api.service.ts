@@ -15,18 +15,7 @@ export class ApiService {
   }
 
   setSelection($event) {
-    return this.http.patch(this.selectionUrl, $event)
-  
-  }
-
-
-  getSelection() {
-    return this.http.get(this.selectionUrl).subscribe(response => console.log('new selection:', response));
-  }
-
-  getCityInfo(id){
-    return this.http.get(this.getUrl+'/'+id);
-
+    return this.http.patch(this.selectionUrl, $event)  
   }
 
 }

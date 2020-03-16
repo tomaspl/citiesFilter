@@ -1,5 +1,6 @@
 import { Component, Input, Output, EventEmitter} from '@angular/core';
 import { CityInfo } from '../models/city';
+import { UpdateAction } from '../models/updateAction';
 
 @Component({
   selector: 'app-filter-select',
@@ -8,14 +9,16 @@ import { CityInfo } from '../models/city';
 })
 export class FilterSelectComponent{
   @Input() cities: CityInfo[]
-  @Input() undoAction:any;
-  @Output() updateSelection: EventEmitter<any> = new EventEmitter();
+  @Input() undoAction:Object;
+  @Output() updateSelection: EventEmitter<UpdateAction> = new EventEmitter();
 
-  selectedCities: CityInfo[] = [];
-  filteredCities:CityInfo[]
-  filteredList = {}
-  text = ''
+  public selectedCities: CityInfo[] = [];
+  public filteredCities:CityInfo[]
+  public filteredList = {}
+  public text = ''
+
   constructor() { }
+
   ngOnChanges(){
     if(this.undoAction){
       if(this.undoAction[Object.keys(this.undoAction)[0]]){
@@ -27,6 +30,7 @@ export class FilterSelectComponent{
       }
     }
   }
+  
   filterCity($event){
     this.filteredCities = [];
     this.text = $event.target.value

@@ -10,11 +10,13 @@ import { SnackBarErrorComponent } from './shared/snack-bar-error/snack-bar-error
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  title = 'frontendChallenge';
-  showSpinner = true;
-  cities: CityInfo[];
-  undoAction:any
+  public title = 'frontendChallenge';
+  public showSpinner = true;
+  public cities: CityInfo[];
+  public undoAction: Object;
+
   constructor(private apiService:ApiService, private _snackBar: MatSnackBar){}
+
   ngOnInit(){
     this.apiService.getConfig().subscribe(response => {
       this.showSpinner = false;
@@ -29,10 +31,7 @@ export class AppComponent implements OnInit {
   }
 
   updateSelection($event){
-    console.log('updateSelection $event ->',$event)
-    this.apiService.setSelection($event.data).subscribe(response =>{
-
-    },
+    this.apiService.setSelection($event.data).subscribe(response =>{},
     err => {
       const nextAction = $event.action === 'checking' ? 'unchecked':'checked';
       this._snackBar.openFromComponent(SnackBarErrorComponent, {

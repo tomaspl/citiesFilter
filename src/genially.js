@@ -1,7 +1,3 @@
-<div align="center" id="liveworksheet838882" style="width:100%">
-<span id="lwslink838882"><font face="Arial" size="2"><a href="https://es.liveworksheets.com/worksheets/es/Matemáticas/Mates/Mas_1_y_menos_1_nv838882zv">Mas 1 y menos 1</a>, una ficha interactiva de <a href="https://es.liveworksheets.com/user/Chechulusa">Chechulusa</a></font><br><a href="https://es.liveworksheets.com" style="text-decoration: none"><font face="Century Gothic" size="4">live<b>worksheets.com</b></font></a></span>
-</div>
-<script language="javascript">
 loadliveworksheet(838882,'sakzrkuj',800,'es',204351);
 if (typeof numerolws === 'undefined') {
     numerolws = 0;
@@ -118,5 +114,3 @@ document.getElementById("lwsinnerdiv"+worksheetid).style.width = String(1024 * p
 document.getElementById("lwsouterdiv"+worksheetid).style.height = String((worksheetheight * proporcion)) + "px";
 document.getElementById("lwsfullscreenbutton"+worksheetid).style.top = String((worksheetheight * proporcion) - 70) + "px";
 }
-
-</script>
